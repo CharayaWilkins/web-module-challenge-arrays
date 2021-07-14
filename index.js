@@ -45,10 +45,11 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(array){
+  const newFlavorArray = [...originalFlavors];
+  return newFlavorArray;
 }    
-
+console.log('Task 1', copy(originalFlavors));
 
 
 
@@ -63,10 +64,17 @@ Confirm that an array is exactly 31 flavors. Your function should accept:
 For Example: is31Flavors(originalFlavors) will return true if your code is working properly
 */
 
-
-function is31Flavors(/*your code here*/){
- /*your code here*/
+//taking 1 paramete which is an array so I would call it an array
+function is31Flavors(array){
+  //we need an if statement to check that the length of the array is 31 flavors, if it is, we want to return true (boolean - no quotes) 
+  if(array.length === 31){
+    return true;
+  }else{
+     //else we want to return false
+    return false
+  }
 }
+console.log('Task 2', is31Flavors(originalFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -80,10 +88,14 @@ Use the addFlavor function below to do the following:
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-
-function addFlavor(/*your code here*/){
- /*your code here*/
+//2 parameters. 1st will be an array, 2nd will be a string
+function addFlavor(array,string){
+  //we need to add the string to the front of the array .unshift()
+  originalFlavors.unshift('Rainbow Sherbert')
+     //return the array
+     return originalFlavors;
 }
+console.log('Task 3', addFlavor(originalFlavors, 'Rainbow Sherbert'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -97,10 +109,13 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+//1 parameter which is an array
+function removeLastFlavor(array){
+  //remove the last item from the array using .pop()
+  originalFlavors.pop()
+  return originalFlavors;
 }
-
+console.log('Task 4', removeLastFlavor(originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -168,12 +183,16 @@ Use the filterByWord function below to do the following:
 */
 
 function filterByWord(array, string){
+  //new array to push results to
   const filteredArray = [];
+  //loop for the array and check each index to see if it includes a string
   for(let i = 0; i < array.length; i++){
     if(array[i].includes(string)){
+      //if it does, push it to the new array
       filteredArray.push(array[i]);
     }
   }
+  //return results to the new array
   return filteredArray
 }
 console.log('task 7',filterByWord, 'Chocolate');
