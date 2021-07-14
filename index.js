@@ -46,8 +46,9 @@ Use the copy function below to do the following:
 */
 
 function copy(array){
-  const newFlavorArray = [...originalFlavors];
+  const newFlavorArray = [...originalFlavors];{
   return newFlavorArray;
+  }
 }    
 console.log('Task 1', copy(originalFlavors));
 
@@ -71,7 +72,7 @@ function is31Flavors(array){
     return true;
   }else{
      //else we want to return false
-    return false
+    return false;
   }
 }
 console.log('Task 2', is31Flavors(originalFlavors));
@@ -91,9 +92,10 @@ Use the addFlavor function below to do the following:
 //2 parameters. 1st will be an array, 2nd will be a string
 function addFlavor(array,string){
   //we need to add the string to the front of the array .unshift()
-  originalFlavors.unshift('Rainbow Sherbert')
+  array.unshift(string);{
      //return the array
-     return originalFlavors;
+     return array;
+  }
 }
 console.log('Task 3', addFlavor(originalFlavors, 'Rainbow Sherbert'));
 
@@ -111,9 +113,10 @@ Use the removeLastFlavor function below to do the following:
 
 //1 parameter which is an array
 function removeLastFlavor(array){
-  //remove the last item from the array using .pop()
-  originalFlavors.pop()
-  return originalFlavors;
+  // remove the last item from the array using .pop()
+  array.pop();{
+  return array;
+  }
 }
 console.log('Task 4', removeLastFlavor(originalFlavors));
 
@@ -129,9 +132,10 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(array, number){
+  return array[number];
 }
+console.log(getFlavorByIndex(originalFlavors, 20));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -193,7 +197,7 @@ function filterByWord(array, string){
     }
   }
   //return results to the new array
-  return filteredArray
+  return filteredArray;
 }
 console.log('task 7',filterByWord, 'Chocolate');
 
